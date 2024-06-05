@@ -1,31 +1,30 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-// import uselogin from '../../hooks/useLogin';
+import uselogin from '../hooks/useLogin.js';
 
 
 
 const Loginpage = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('varun1');
+    const [password, setPassword] = useState('pass1');
 
-    // const { loading, login } = uselogin();
+    const { loading, login } = uselogin();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // login(username, password);
+        login(username, password);
     }
     return (
         <>
 
-            <div className="landingimg h-screen flex  flex-col items-center justify-center mx-auto p-6 min-w-96 ">
+            <div className="landingimg h-screen w-screen flex  flex-col items-center justify-center">
                 <div className="h-fit w-2/6 bg-black shadowed rounded-md bg-clip-padding p-9 backdrop-filter backdrop-blur-lg bg-opacity-70">
-                    {/* <div className="h-full w-full p-6 rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-30  "> */}
 
                     <h1 className="text-5xl font-semibold text-center bluish p-3">
                         -LOGIN-
                     </h1>
                     <div className="text-center">
-                        <span className="text-white text-2xl text-center">To Place ORDER</span>
+                        <span className="text-white text-2xl text-center">To CafeIn</span>
                     </div>
                     <form action="" className="flex p-6 flex-col items-center justify-center w-full" onSubmit={handleSubmit}>
                         <div className="p-6">
@@ -48,7 +47,7 @@ const Loginpage = () => {
                         </div>
                         <div className="text-white mt-7">
                             Don't have an account ?
-                            {/* <Link to={"/"} className="bluish"> Signup</Link> */}
+                            <Link to={"/signup"} className="text-amber-400"> Signup</Link>
                         </div>
 
 

@@ -8,9 +8,9 @@ const Chefs = () => {
 
             </div>
             <div className='w-8/12 h-72 flex items-center justify-around  '>
-                <Chefdetail image={"https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} name={"Jumanji Thakur"} />
-                <Chefdetail image={"https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} name={"Daniel Dhoomketu"} />
-                <Chefdetail image={"https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} name={"Roman Gandhi"} />
+                <Chefdetail image={"chef1.png"} name={"Jumanji Thakur"} />
+                <Chefdetail image={"chef2.png"} name={"Daniel Dhoomketu"} />
+                <Chefdetail image={"chef3.png"} name={"Roman Gandhi"} />
             </div>
             <div className='w-1 h-52 bg-amber-400 '>
 

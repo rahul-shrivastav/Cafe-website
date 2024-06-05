@@ -1,21 +1,22 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
-// const authRoutes = require("./routes/auth.route.js");
-// const messageRoutes = require("./routes/message.route.js");
+const authRoutes = require("./routes/auth.route.js");
+const orderRoutes = require("./routes/orderroute.js");
 // const userRoutes = require("./routes/user.route.js");
 const { connectToMongoDb } = require("./utils/connectMongo.js");
 const path = require('path')
-
+const cors = require("cors");
 dotenv.config()
 const port = process.env.PORT;
 const app = express()
 
 app.use(express.json())
 app.use(cookieParser())
+app.use(cors());
 
-// app.use("/api/auth", authRoutes);
-// app.use("/api/messages", messageRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/order", orderRoutes);
 // app.use("/api/users", userRoutes);
 
 // app.use(express.static(path.join(_dirname, "/frontend/dist")))
@@ -25,7 +26,8 @@ app.use(cookieParser())
 // })
 
 app.listen(port, () => {
-    connectToMongoDb();
     console.log(`server running at port ${port}`);
+    connectToMongoDb();
+
 });
 
