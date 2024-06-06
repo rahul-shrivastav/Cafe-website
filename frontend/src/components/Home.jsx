@@ -5,6 +5,7 @@ import Achievement from './Achievement'
 import Chefs from './Chefs'
 import Footer from './Footer'
 
+
 const Home = () => {
     return (
         <div className='scroll h-full'>

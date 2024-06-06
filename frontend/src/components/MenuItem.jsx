@@ -1,6 +1,8 @@
 import React from 'react'
 
+
 const MenuItem = (details) => {
+
     // "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
     return (
         <div>
@@ -10,7 +12,7 @@ const MenuItem = (details) => {
                     <h2 className="card-title">{details.name}</h2>
                     <p>{details.description}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Order Now</button>
+                        <button className="btn btn-primary">Order Now <span className="text-amber-700">${details.price}</span> </button>
                     </div>
                 </div>
             </div>

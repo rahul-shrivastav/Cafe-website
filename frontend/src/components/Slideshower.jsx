@@ -1,19 +1,28 @@
 import React from 'react'
 import MenuItem from './MenuItem'
+import getallitems from '../hooks/getallitems'
 
 const Slideshower = () => {
+    const data = getallitems()
 
     return (
         <div className='flex items-center justify-center flex-wrap z-0'>
-
-            <MenuItem image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" name="coffee" description="sdfsd" />
-            <MenuItem image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" name="coffee" description="sdfsd" />
-            <MenuItem image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" name="coffee" description="sdfsd" />
-            <MenuItem image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" name="coffee" description="sdfsd" />
-
+            {data.map(item => {
+                if (item.itemName === "Latte") {
+                    return <MenuItem key={item._id} image="latte.png" name={item.itemName} description={item.description} price={item.price} />
+                }
+                if (item.itemName === "Black Coffee") {
+                    return <MenuItem key={item._id} image="blackcoffee.png" name={item.itemName} description={item.description} price={item.price} />
+                }
+                if (item.itemName === "Mocha") {
+                    return <MenuItem key={item._id} image="mocha.png" name={item.itemName} description={item.description} price={item.price} />
+                }
+                if (item.itemName === "Cappuccino") {
+                    return <MenuItem key={item._id} image="cappuchino.png" name={item.itemName} description={item.description} price={item.price} />
+                }
+            })
+            }
         </div>
-
-
     )
 }
 

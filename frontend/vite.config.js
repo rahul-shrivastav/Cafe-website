@@ -10,6 +10,9 @@ export default defineConfig({
       "/api": {
         target: "http://localhost:5000",
       },
+      "/items": {
+        target: "http://localhost:5000",
+      },
     },
   }
 })
