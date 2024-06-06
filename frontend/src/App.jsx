@@ -5,6 +5,7 @@ import { Navigate, Routes, Route } from 'react-router-dom'
 import Signuppage from './components/Signuppage'
 import { useAuthContext } from './context/AuthContext.jsx';
 import { Toaster } from 'react-hot-toast';
+import Orderpage from './components/Orderpage.jsx'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <div className=''>
       <Routes>
         <Route path='/' element={authUser ? <Home /> : <Navigate to={"/login"} />} />
+        <Route path='/item/:id' element={authUser ? <Orderpage /> : <Navigate to={"/login"} />} />
         <Route path='/login' element={authUser ? <Navigate to="/" /> : <Loginpage />} />
         <Route path='/signup' element={authUser ? <Navigate to="/" /> : <Signuppage />} />
       </Routes>
@@ -20,13 +22,13 @@ function App() {
         toastOptions={{
           className: '',
           style: {
-            border: "1px solid #8AEAEE",
+            border: "1px solid #FFBF00",
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: '#292E38',
+            background: '#001011',
             padding: '10px 40px 10px 40px',
-            color: '#8AEAEE',
+            color: '#FFBF00',
 
           },
         }}

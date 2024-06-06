@@ -44,7 +44,7 @@ const usesignup = () => {
             }
             localStorage.setItem("cafe-user", JSON.stringify(data));
             setAuthUser(data);
-            console.log("signed in", data)
+            toast.success("Signed in Successfully")
         } catch (error) {
             toast.error(error.message);
         } finally {
