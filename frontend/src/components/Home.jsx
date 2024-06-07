@@ -18,7 +18,7 @@ const Home = () => {
                     <span className='text-2xl font-thin text-amber-400'>Welcome to our cafe</span>
                     <span className=''>Discover the </span><span className=''>taste of Real </span> <span className='' > Coffee</span>
 
-                    <button className='text-xl px-10 mt-10 py-3 rounded-sm font-thin bg-transparent  border-white border  text-white  hover:bg-white hover:text-black hover:border-transparent'>Checkout Our Menu</button>
+                    <button className='text-xl px-10 mt-10 py-3 rounded-sm font-thin bg-transparent  border-white border  text-white  hover:bg-white hover:text-black hover:border-transparent'><a href="#menu">Checkout Our Menu</a></button>
                 </div>
             </div >
 

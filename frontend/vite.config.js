@@ -13,6 +13,9 @@ export default defineConfig({
       "/items": {
         target: "http://localhost:5000",
       },
+      "/order": {
+        target: "http://localhost:5000",
+      },
     },
   }
 })

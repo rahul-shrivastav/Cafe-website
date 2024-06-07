@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 
 import { HiOutlineMinusCircle } from "react-icons/hi2";
 import { HiOutlinePlusCircle } from "react-icons/hi2";
@@ -7,10 +7,13 @@ const Quantity = (props) => {
     const [quantity, setquantity] = useState(1)
     const increase = () => {
         setquantity((qquantity) => { return qquantity + 1 })
+
     }
     const decrease = () => {
         setquantity((qquantity) => { if (qquantity > 1) return qquantity - 1; else return 1 })
+
     }
+    useEffect(() => { props.setquantityf(quantity) }, [quantity])
 
     return (
         <div className='text-center'>

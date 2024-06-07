@@ -18,7 +18,7 @@ const Slideshower = () => {
                     return <MenuItem key={item._id} id={item._id} image="mocha.png" name={item.itemName} description={item.description} price={item.price} />
                 }
                 if (item.itemName === "Cappuccino") {
-                    return <MenuItem key={item._id} id={item._id} image="cappuchino.png" name={item.itemName} description={item.description} price={item.price} />
+                    return <MenuItem key={item._id} id={item._id} image="cappuccino.png" name={item.itemName} description={item.description} price={item.price} />
                 }
                 if (item.itemName === "Cold Brew") {
                     return <MenuItem key={item._id} id={item._id} image="coldbrew.png" name={item.itemName} description={item.description} price={item.price} />

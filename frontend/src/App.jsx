@@ -6,6 +6,8 @@ import Signuppage from './components/Signuppage'
 import { useAuthContext } from './context/AuthContext.jsx';
 import { Toaster } from 'react-hot-toast';
 import Orderpage from './components/Orderpage.jsx'
+import Yourorderpage from './components/Yourorderpage.jsx'
+import Profilepage from './components/Profilepage.jsx'
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
         <Route path='/item/:id' element={authUser ? <Orderpage /> : <Navigate to={"/login"} />} />
         <Route path='/login' element={authUser ? <Navigate to="/" /> : <Loginpage />} />
         <Route path='/signup' element={authUser ? <Navigate to="/" /> : <Signuppage />} />
+        <Route path='/myorders' element={authUser ? <Yourorderpage /> : <Navigate to="/" />} />
+        <Route path='/profile' element={authUser ? <Profilepage /> : <Navigate to="/" />} />
       </Routes>
       <Toaster
         toastOptions={{

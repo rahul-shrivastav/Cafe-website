@@ -23,7 +23,6 @@ const uselogin = () => {
             }
             localStorage.setItem("cafe-user", JSON.stringify(data));
             setAuthUser(data);
-            console.log("logged in", data)
             toast.success("Logged in Successfully")
         } catch (error) {
             toast.error(error.message);
