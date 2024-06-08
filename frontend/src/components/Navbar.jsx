@@ -2,6 +2,8 @@ import React from 'react'
 import { FaUserLarge } from "react-icons/fa6";
 import uselogout from '../hooks/useLogout';
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from '../context/AuthContext'
+
 
 const Navbar = () => {
     const { loading, logout } = uselogout();
@@ -12,6 +14,7 @@ const Navbar = () => {
     const toProfilepage = () => {
         navigate('/profile')
     }
+    const { authUser } = useAuthContext()
     return (
         <div className=' w-full flex items-center py-5 bg-black z-10'>
             <div className='grow-0 ml-14'>
@@ -35,7 +38,7 @@ const Navbar = () => {
             </div>
             <div className='grow-0 mr-20'>
                 <details className="dropdown">
-                    <summary className=" btn"><FaUserLarge />{"Rahul"}</summary>
+                    <summary className=" btn"><FaUserLarge />{authUser.fullName.toUpperCase()}</summary>
                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                         <li><a><button onClick={toProfilepage}>Your Profile</button></a></li>
                         <li><a><button onClick={toOrderspage}>Your Orders</button></a></li>

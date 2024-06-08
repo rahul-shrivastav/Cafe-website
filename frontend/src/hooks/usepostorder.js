@@ -7,10 +7,10 @@ const usepostorder = () => {
 
     const usepost = async (itemid, quantity) => {
         try {
-            const res = await fetch(`/order/post/${itemid}/${quantity}`, {
+            const res = await fetch(`/order/post/${authUser._id}/${itemid}/${quantity}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ userid: authUser._id }),
+                // body: JSON.stringify({ userid: authUser._id }),
             });
 
             const data = await res.json()

@@ -7,7 +7,7 @@ const Slideshower = () => {
 
     return (
         <div className='flex items-center justify-center flex-wrap z-0'>
-            {data.map(item => {
+            {data.map((item) => {
                 if (item.itemName === "Latte") {
                     return <MenuItem key={item._id} id={item._id} image="latte.png" name={item.itemName} description={item.description} price={item.price} />
                 }

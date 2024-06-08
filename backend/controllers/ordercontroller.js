@@ -7,8 +7,8 @@ const postorder = async (req, res) => {
             itemid: req.params.itemid,
             quantity: req.params.quantity
         });
-        const userid = req.body.id;
-        const user = await User.findOne({ userid });
+        const userid = req.params.userid;
+        const user = await User.findOne({ _id: userid });
         user.orders.push(neworder._id)
         await user.save()
 
